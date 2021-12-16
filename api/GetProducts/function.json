@@ -5,10 +5,10 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
+      "route": "products",
       "methods": [
-        "post"
-      ],
-      "route": "product"
+        "get"
+      ]
     },
     {
       "type": "http",
@@ -16,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/CreateProduct/index.js"
+  "scriptFile": "../dist/GetProducts/index.js"
 }
