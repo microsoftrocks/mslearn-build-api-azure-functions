@@ -6,7 +6,7 @@ containerName=products
 
 echo "Beginning database creation process..."
 
-groupName=$(az group list --query "[? contains(name,'WorkShop')].name" -o tsv)
+groupName=$(az group list --query "[?contains(name,'workshop')].{name:name}" -o tsv)
 
 echo "Creating Cosmos DB database $accountName in Resource Group $groupName..."
 echo "This can take up to 10 minutes. Feel free to continue with the Learn Module."
