@@ -8,7 +8,7 @@ echo "Getting connection string. This might take up to two minutes as we prepare
 accountName=$(az cosmosdb list --query "[0].name" -o tsv)
 
 # Get the group name, which is preassigned
-groupName=$(az group list --query "[0].name" -o tsv)
+groupName=$(az group list --query "[?contains(name,'workshop')].{name:name}" -o tsv)
 
 # Create the database
 az cosmosdb sql database create -a $accountName -g $groupName -n $databaseName -o none
